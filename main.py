@@ -161,7 +161,7 @@ class ApplicationWindow(QWidget):
         grid.addWidget(self.update_button, 6, 5)
         grid.addWidget(self.start_button, 6, 6)
 
-        self.input_label = QLabel('输入文本:', self)
+        # self.input_label = QLabel('输入文本:', self)
         self.input_edit = QLineEdit(self)
 
         self.send_button = QPushButton('发送字符串', self)
