@@ -21,14 +21,14 @@
     {"x": 0, "y": 124, "head": 0}
     ```
 
-    其中`x`和`y`是小车在2D地图上的世界坐标，`head`是小车的朝向，以Y轴正方向为0度，顺时针角度递增，范围是0~360度。
-    发送示例请参考Arduino例程：[SendDemo.ino](https://github.com/lintheyoung/RouteDisplay/blob/main/SendDemo.ino)
+    其中`x`和`y`是小车在2D地图上的世界坐标，`head`是小车的朝向，以Y轴正方向为0度，顺时针角度递增，范围是0~360度，数据类型全部为整形（int）
+    发送示例请参考Arduino例程：[SendDemo.ino](https://github.com/lintheyoung/RouteDisplay/blob/main/ArduinoDemo/SendDemo/SendDemo.ino)
 
 *   上位机发送格式如下：
     ```json
     {"text": "start"}
     ```
-    接收示例请参考Arduino例程，该实例输入发送"open"点亮D13的LED，"close"熄灭：[RecDemo.ino](https://github.com/lintheyoung/RouteDisplay/blob/main/RecDemo.ino)
+    发送类型为字符串（string）类型，接收示例请参考Arduino例程，该实例输入发送"open"点亮D13的LED，"close"熄灭：[RecDemo.ino](https://github.com/lintheyoung/RouteDisplay/blob/main/ArduinoDemo/RecDemo/RecDemo.ino)
 
 
 ## Python文件运行
@@ -50,7 +50,7 @@
     ```
 
 ### 文件打包为exe
-你可以使用Nuitka打包你的python文件为exe，命令如下：
+你可以使用Nuitka打包你的python文件为exe
 ```bash
 nuitka --onefile --windows-icon-from-ico=myapp.ico --windows-disable-console --plugin-enable=pyqt5 main.py
 ```
