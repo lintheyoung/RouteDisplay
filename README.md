@@ -1,11 +1,8 @@
 
 # 小车轨迹记录可视化上位机
-=========
 项目使用PyQt构建，用于接收并可视化小车的移动轨迹。
 
 ## 使用方法
-----
-
 1.  **注意，本项目需要设置波特率为115200。**
 2.  在"轨迹保存长度"输入框内，设定希望可视化的轨迹时间长度。
 3.  设定坐标轴范围：
@@ -17,14 +14,9 @@
 5.  你可以直接输入字符串发送到串口。
 
 ## 接收与发送格式
--------
-
 本项目使用JSON格式进行串口通信。
 
 *   上位机接收格式如下：
-
-    json
-
     ```json
     {"x": 0, "y": 124, "head": 0}
     ```
@@ -33,53 +25,32 @@
     发送示例请参考Arduino例程：[SendDemo.ino](https://github.com/lintheyoung/RouteDisplay/blob/main/SendDemo.ino)
 
 *   上位机发送格式如下：
-
-    json
-
     ```json
     {"text": "start"}
     ```
-
     接收示例请参考Arduino例程，该实例输入发送"open"点亮D13的LED，"close"熄灭：[RecDemo.ino](https://github.com/lintheyoung/RouteDisplay/blob/main/RecDemo.ino)
 
 
 ## Python文件运行
-----------
-
 ### 运行环境的设定步骤如下：
-
 1.  克隆项目
-
-    bash
-
     ```bash
     git clone https://github.com/lintheyoung/RouteDisplay
     ```
 
 2.  安装依赖
 
-    bash
-
     ```bash
     pip install -r requirements.txt
     ```
 
 3.  运行项目
-
-    bash
-
     ```bash
     python main.py
     ```
 
-
 ### 文件打包为exe
---------
-
 你可以使用Nuitka打包你的python文件为exe，命令如下：
-
-bash
-
 ```bash
 nuitka --onefile --windows-icon-from-ico=myapp.ico --windows-disable-console --plugin-enable=pyqt5 main.py
 ```
